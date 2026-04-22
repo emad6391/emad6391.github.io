@@ -1,0 +1,80 @@
+---
+interface Props {
+  sectionLinks?: Array<{ label: string; href: string }>;
+}
+
+const { sectionLinks = [
+  { label: 'About', href: '/index#about' },
+  { label: 'Focus', href: '/index#focus-areas' },
+  { label: 'Certs', href: '/index#certifications' },
+  { label: 'Projects', href: '/index#projects' },
+  { label: 'Contact', href: '/index#contact' }
+] } = Astro.props;
+---
+
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/index" class="group flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#00e5c8] group-hover:shadow-[0_0_12px_#00e5c8] transition-shadow"></span>
+      <span class="font-mono text-sm font-bold tracking-widest text-white uppercase">emad.alhani</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-1">
+      {sectionLinks.map((link, i) => (
+        <a
+          href={link.href}
+          class="relative px-4 py-2 text-sm font-medium text-white/50 hover:text-[#00e5c8] transition-colors duration-200 group"
+        >
+          <span class="font-mono text-[#00e5c8]/40 text-xs mr-1">0{i+1}.</span>
+          {link.label}
+          <span class="absolute bottom-1 left-4 right-4 h-px bg-[#00e5c8] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+        </a>
+      ))}
+      <a
+        href="mailto:contact@emadalhani.com"
+        class="ml-4 px-5 py-2 border border-[#00e5c8] text-[#00e5c8] text-sm font-mono font-medium rounded hover:bg-[#00e5c8]/10 hover:shadow-[0_0_20px_rgba(0,229,200,0.2)] transition-all duration-200"
+      >
+        Hire Me
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden text-white/60 hover:text-[#00e5c8] transition-colors" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#0b0d14]/98 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2">
+      {sectionLinks.map((link, i) => (
+        <a href={link.href} class="py-3 text-sm font-medium text-white/60 hover:text-[#00e5c8] transition-colors border-b border-white/5">
+          <span class="font-mono text-[#00e5c8]/40 text-xs mr-2">0{i+1}.</span>
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-[#0b0d14]/95', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+    } else {
+      header?.classList.remove('bg-[#0b0d14]/95', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+    }
+  });
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

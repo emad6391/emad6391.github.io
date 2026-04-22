@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://emad-alhaniops-portfolio-staging.b12sites.com/sitemap-index.xml

@@ -1,0 +1,9 @@
+{
+  "recaptcha_version": 3,
+  "client_uid": "V90ZJblE",
+  "product_url": "https://b12.io",
+  "debug": false,
+  "preview_frame_script": "https://static.b12.io/static/preview_frame_v2/preview_frame_v2.199c79cc78e2.js",
+  "website_url": "https://emad-alhaniops-portfolio-staging.b12sites.com",
+  "is_preview": true
+}

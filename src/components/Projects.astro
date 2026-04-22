@@ -1,0 +1,87 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  techStack: string[];
+  index: string;
+}
+
+const projects: Project[] = [
+  {
+    index: '01',
+    title: 'Terraform AWS Infrastructure',
+    description: 'Provisioning of AWS VPC, EC2, and networking using Terraform. Showcases IaC best practices, modular architecture, and state management.',
+    techStack: ['Terraform', 'AWS', 'VPC', 'EC2']
+  },
+  {
+    index: '02',
+    title: 'Kubernetes Deployment Pipeline',
+    description: 'End-to-end CI/CD pipeline for containerized applications using Kubernetes. Automated testing, image building, and rolling deployments with health checks.',
+    techStack: ['Kubernetes', 'Docker', 'CI/CD', 'Helm']
+  },
+  {
+    index: '03',
+    title: 'Multi-Environment Infrastructure',
+    description: 'Infrastructure across dev, staging, and production environments using Terraform modules and GitOps principles for consistency.',
+    techStack: ['Terraform', 'AWS', 'GitOps', 'Automation']
+  }
+];
+---
+
+<section id="projects" class="relative py-28 px-6 section-animate" style="animation-delay: 0.4s">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="flex items-end justify-between mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-[#00e5c8]/60 text-xs tracking-widest">05.</span>
+          <span class="w-8 h-px bg-[#00e5c8]/40"></span>
+        </div>
+        <h2 class="text-4xl lg:text-5xl text-white">Featured<br/>Projects</h2>
+      </div>
+    </div>
+
+    <div class="space-y-5">
+      {projects.map((project) => (
+        <div class="group relative flex flex-col sm:flex-row sm:items-center gap-6 p-7 lg:p-9 rounded-xl border border-white/8 bg-[#0d1117] hover:border-[#00e5c8]/40 hover:bg-[#0f1419] transition-all duration-300 cursor-default">
+
+          <!-- Left: index -->
+          <div class="sm:w-16 flex-shrink-0">
+            <span class="font-mono text-4xl font-black text-white/[0.06] group-hover:text-[#00e5c8]/20 transition-colors">
+              {project.index}
+            </span>
+          </div>
+
+          <!-- Divider -->
+          <div class="hidden sm:block w-px h-16 bg-white/10 group-hover:bg-[#00e5c8]/20 transition-colors flex-shrink-0"></div>
+
+          <!-- Center: content -->
+          <div class="flex-grow space-y-3">
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00e5c8] transition-colors duration-300">
+              {project.title}
+            </h3>
+            <p class="text-white/50 text-sm leading-relaxed max-w-2xl">
+              {project.description}
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              {project.techStack.map(tech => (
+                <span class="px-3 py-1 font-mono text-xs rounded border border-white/10 text-white/50 bg-white/5 group-hover:border-[#00e5c8]/20 group-hover:text-[#00e5c8]/70 transition-all">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Right: arrow -->
+          <div class="sm:ml-auto flex-shrink-0">
+            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 group-hover:border-[#00e5c8]/50 group-hover:text-[#00e5c8] group-hover:shadow-[0_0_15px_rgba(0,229,200,0.2)] transition-all">
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

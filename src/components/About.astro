@@ -1,0 +1,70 @@
+---
+---
+
+<section id="about" class="relative py-28 px-6 section-animate" style="animation-delay: 0.1s">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+      <!-- Section label -->
+      <div class="lg:col-span-3">
+        <div class="lg:sticky lg:top-32">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono text-[#00e5c8]/60 text-xs tracking-widest">02.</span>
+            <span class="w-8 h-px bg-[#00e5c8]/40"></span>
+          </div>
+          <h2 class="text-4xl lg:text-5xl text-white mb-6">About<br/>Me</h2>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-sm text-white/40">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#00e5c8]"></span>
+              <span class="font-mono">Available for work</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-white/40">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span class="font-mono">Remote / Hybrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="lg:col-span-9 space-y-8">
+        <p class="text-lg text-white/60 leading-relaxed">
+          My journey into DevOps began with a passion for automation and building reliable infrastructure.
+          I transitioned from traditional development to focus on the critical aspects of modern software delivery:
+          automating processes, establishing CI/CD pipelines, and containerizing applications.
+        </p>
+
+        <p class="text-lg text-white/60 leading-relaxed">
+          What drives my work is the pursuit of efficiency and reliability. I specialize in using
+          <span class="text-white font-medium">Infrastructure as Code</span> (primarily Terraform) to provision cloud resources,
+          implementing <span class="text-white font-medium">Kubernetes</span> for orchestration, and designing
+          CI/CD pipelines that enable teams to deploy with confidence.
+        </p>
+
+        <!-- Highlighted quote -->
+        <div class="relative pl-6 py-6 border-l-2 border-[#00e5c8]">
+          <div class="absolute -left-1 top-6 w-2 h-2 rounded-full bg-[#00e5c8] shadow-[0_0_10px_#00e5c8]"></div>
+          <p class="text-xl text-white font-medium leading-relaxed italic">
+            "Committed to continuous learning, staying current with cloud technologies, and sharing knowledge with the community."
+          </p>
+        </div>
+
+        <p class="text-lg text-white/60 leading-relaxed">
+          I believe in the philosophy of continuous improvement—both in infrastructure and in my own growth as an engineer.
+          Whether it's exploring new tools, improving system performance, or mentoring others, I'm always looking for ways
+          to elevate my craft.
+        </p>
+
+        <!-- Skills row -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+          {['Terraform', 'Kubernetes', 'AWS', 'Docker', 'CI/CD', 'GitOps', 'Helm', 'Linux'].map(skill => (
+            <div class="px-4 py-2.5 rounded border border-white/10 bg-white/5 text-center">
+              <span class="font-mono text-sm text-white/70">{skill}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

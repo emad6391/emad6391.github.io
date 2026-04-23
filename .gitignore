@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # generated types
 .astro/
 
@@ -50,3 +51,8 @@ package.json.backup
 .cache/
 .local/
 .config/
+=======
+node_modules/
+dist/
+.env
+>>>>>>> 1c3309d0a8b116b1a8c16845731a0a60d5ecc582

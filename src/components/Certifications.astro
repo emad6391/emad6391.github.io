@@ -1,55 +1,82 @@
 ---
-interface Certification {
-  name: string;
-  issuer: string;
-  color: string;
-}
-
-const certifications: Certification[] = [
-  { name: 'HashiCorp Terraform Associate', issuer: 'HashiCorp', color: '#7c3aed' },
-  { name: 'AWS Certified DevOps Engineer – Professional', issuer: 'Amazon Web Services', color: '#f59e0b' },
-  { name: 'Certified Kubernetes Administrator', issuer: 'CNCF', color: '#3b82f6' },
-  { name: 'AWS Developer Associate', issuer: 'Amazon Web Services', color: '#f59e0b' }
+const certifications = [
+  {
+    name: 'AWS Certified DevOps Engineer – Professional',
+    issuer: 'Amazon Web Services',
+    issuerShort: 'AWS',
+    color: '#f59e0b',
+    level: 'Professional',
+  },
+  {
+    name: 'AWS Developer Associate',
+    issuer: 'Amazon Web Services',
+    issuerShort: 'AWS',
+    color: '#f59e0b',
+    level: 'Associate',
+  },
+  {
+    name: 'HashiCorp Terraform Associate',
+    issuer: 'HashiCorp',
+    issuerShort: 'HashiCorp',
+    color: '#818cf8',
+    level: 'Associate',
+  },
+  {
+    name: 'Certified Kubernetes Administrator',
+    issuer: 'Cloud Native Computing Foundation',
+    issuerShort: 'CNCF',
+    color: '#22d3ee',
+    level: 'Professional',
+  },
 ];
 ---
 
 <section id="certifications" class="relative py-28 px-6 section-animate" style="animation-delay: 0.3s">
   <div class="max-w-7xl mx-auto">
-
-    <div class="flex items-end justify-between mb-16">
+    <div class="flex items-end justify-between mb-16 flex-wrap gap-6">
       <div>
-        <div class="flex items-center gap-3 mb-4">
-          <span class="font-mono text-[#00e5c8]/60 text-xs tracking-widest">04.</span>
-          <span class="w-8 h-px bg-[#00e5c8]/40"></span>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-[#22d3ee]/60 text-xs tracking-widest">04.</span>
+          <span class="w-8 h-px bg-[#22d3ee]/35"></span>
         </div>
-        <h2 class="text-4xl lg:text-5xl text-white">Certifi-<br/>cations</h2>
+        <h2 class="text-4xl lg:text-5xl text-white font-black leading-tight">Certifi-<br/>cations</h2>
       </div>
-      <div class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-[#00e5c8]/30 bg-[#00e5c8]/5">
-        <span class="w-2 h-2 rounded-full bg-[#00e5c8] animate-pulse"></span>
-        <span class="font-mono text-[#00e5c8] text-xs">4 verified</span>
+      <div class="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-[#22d3ee]/25 bg-[#22d3ee]/5">
+        <span class="w-2 h-2 rounded-full bg-[#22d3ee] animate-pulse"></span>
+        <span class="font-mono text-[#22d3ee] text-xs tracking-wide">4 verified</span>
       </div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
       {certifications.map((cert) => (
-        <div class="group relative p-6 rounded-xl border border-white/8 bg-[#0d1117] hover:border-[#00e5c8]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+        <div class="group relative p-6 rounded-xl border border-white/8 bg-[#0d1117] hover:border-[#22d3ee]/35 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_rgba(0,0,0,0.5)] overflow-hidden">
 
-          <!-- Color accent top -->
-          <div class="absolute top-0 left-6 right-6 h-px rounded-full" style={`background: ${cert.color}; opacity: 0.6;`}></div>
+          <!-- Coloured top line -->
+          <div class="absolute top-0 left-0 right-0 h-px" style={`background: linear-gradient(90deg, ${cert.color}99, ${cert.color}33); opacity: 0.9;`}></div>
 
-          <div class="space-y-4">
+          <!-- Glow behind card on hover -->
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"
+            style={`background: radial-gradient(ellipse at 50% 0%, ${cert.color}0a 0%, transparent 70%);`}></div>
+
+          <div class="relative space-y-4">
             <!-- Issuer badge -->
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-white/10">
-              <span class="w-1.5 h-1.5 rounded-full" style={`background: ${cert.color}`}></span>
-              <span class="font-mono text-xs text-white/40">{cert.issuer}</span>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/8">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style={`background: ${cert.color}`}></span>
+              <span class="text-xs text-white/40 font-medium">{cert.issuerShort}</span>
             </div>
 
-            <h3 class="text-base font-bold text-white group-hover:text-[#00e5c8] transition-colors leading-snug">
-              {cert.name}
-            </h3>
+            <div>
+              <div class="inline-block px-2 py-0.5 rounded text-xs font-semibold mb-2.5"
+                style={`background: ${cert.color}18; color: ${cert.color}; border: 1px solid ${cert.color}33;`}>
+                {cert.level}
+              </div>
+              <h3 class="text-sm font-bold text-white group-hover:text-[#22d3ee] transition-colors leading-snug">
+                {cert.name}
+              </h3>
+            </div>
 
-            <div class="flex items-center gap-1.5 text-[#00e5c8]/70">
-              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+            <div class="flex items-center gap-1.5 text-[#22d3ee]/60">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
               </svg>
               <span class="font-mono text-xs">Verified</span>

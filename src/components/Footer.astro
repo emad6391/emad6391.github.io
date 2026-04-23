@@ -1,49 +1,32 @@
 ---
-import B12Link from './B12Link.astro';
-
-interface Props {
-  sectionLinks?: Array<{ label: string; href: string }>;
-}
-
-const { sectionLinks = [
+const sectionLinks = [
   { label: 'About', href: '/index#about' },
   { label: 'Focus Areas', href: '/index#focus-areas' },
   { label: 'Certifications', href: '/index#certifications' },
   { label: 'Projects', href: '/index#projects' },
-  { label: 'Contact', href: '/index#contact' }
-] } = Astro.props;
+  { label: 'Contact', href: '/index#contact' },
+];
 ---
 
-<footer class="relative border-t border-white/5 mt-12">
+<footer class="relative border-t border-white/6 mt-4">
   <div class="max-w-7xl mx-auto px-6 py-10">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#22d3ee]"></span>
-        <span class="text-xs font-semibold tracking-[0.18em] text-white/40 uppercase">Emad Alhani</span>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black text-[#060810]"
+          style="background: linear-gradient(135deg, #22d3ee, #818cf8)">EA</div>
+        <span class="text-sm font-semibold text-white/40 tracking-wide">Emad Alhani</span>
       </div>
+
       <div class="flex flex-wrap justify-center items-center gap-5">
         {sectionLinks.map(link => (
-          <a href={link.href} class="text-xs text-white/25 hover:text-white/70 transition-colors tracking-wide uppercase font-medium">
+          <a href={link.href} class="text-xs text-white/25 hover:text-white/65 transition-colors font-medium tracking-wide uppercase">
             {link.label}
           </a>
         ))}
       </div>
-      <p class="text-xs text-white/20">© 2026</p>
+
+      <p class="text-xs text-white/18 font-mono">© 2026 Emad Alhani</p>
     </div>
   </div>
-  <!-- B12 attribution - kept but minimized -->
-  <div class="b12-wrap">
-    <B12Link />
-  </div>
 </footer>
-
-<style>
-  .b12-wrap {
-    opacity: 0.18;
-    filter: grayscale(1);
-    transition: opacity 0.3s;
-  }
-  .b12-wrap:hover {
-    opacity: 0.45;
-  }
-</style>

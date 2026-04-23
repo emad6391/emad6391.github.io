@@ -1,70 +1,99 @@
 ---
+const skills = {
+  'DevOps & Automation': [
+    { label: 'CI/CD', tools: 'GitHub Actions, Jenkins' },
+    { label: 'IaC', tools: 'Terraform' },
+    { label: 'Config Mgmt', tools: 'Ansible' },
+    { label: 'Version Control', tools: 'Git, GitHub' },
+  ],
+  'Cloud & Platforms': [
+    { label: 'AWS', tools: 'EC2, S3, VPC, IAM, CloudWatch' },
+    { label: 'DigitalOcean', tools: 'Droplets, Networking' },
+    { label: 'Hetzner', tools: 'Cloud Servers, Load Balancers' },
+    { label: 'Cloudflare', tools: 'DNS, Security, Performance' },
+  ],
+  'Containers & Orchestration': [
+    { label: 'Docker', tools: 'Containerisation' },
+    { label: 'Kubernetes', tools: 'CKA Certified' },
+    { label: 'Helm', tools: 'Package Management' },
+    { label: 'ArgoCD', tools: 'GitOps Deployments' },
+  ],
+  'Monitoring & Observability': [
+    { label: 'Prometheus', tools: 'Metrics & Alerting' },
+    { label: 'CloudWatch', tools: 'AWS Monitoring' },
+    { label: 'Elasticsearch', tools: 'Log Management' },
+  ],
+};
 ---
 
 <section id="about" class="relative py-28 px-6 section-animate" style="animation-delay: 0.1s">
   <div class="max-w-7xl mx-auto">
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-      <!-- Section label -->
       <div class="lg:col-span-3">
-        <div class="lg:sticky lg:top-32">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="font-mono text-[#00e5c8]/60 text-xs tracking-widest">02.</span>
-            <span class="w-8 h-px bg-[#00e5c8]/40"></span>
+        <div class="lg:sticky lg:top-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[#22d3ee]/60 text-xs tracking-widest">02.</span>
+            <span class="w-8 h-px bg-[#22d3ee]/35"></span>
           </div>
-          <h2 class="text-4xl lg:text-5xl text-white mb-6">About<br/>Me</h2>
-          <div class="space-y-2">
-            <div class="flex items-center gap-2 text-sm text-white/40">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#00e5c8]"></span>
-              <span class="font-mono">Available for work</span>
+          <h2 class="text-4xl lg:text-5xl text-white font-black mb-7 leading-tight">About<br/>Me</h2>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2.5 text-sm text-white/40">
+              <span class="w-2 h-2 rounded-full bg-green-400"></span>
+              <span>Available for work</span>
             </div>
-            <div class="flex items-center gap-2 text-sm text-white/40">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-              <span class="font-mono">Remote / Hybrid</span>
+            <div class="flex items-center gap-2.5 text-sm text-white/40">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+              <span>Remote / On-site</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Content -->
-      <div class="lg:col-span-9 space-y-8">
-        <p class="text-lg text-white/60 leading-relaxed">
-          My journey into DevOps began with a passion for automation and building reliable infrastructure.
-          I transitioned from traditional development to focus on the critical aspects of modern software delivery:
-          automating processes, establishing CI/CD pipelines, and containerizing applications.
+      <div class="lg:col-span-9 space-y-7">
+        <p class="text-lg text-white/55 leading-relaxed">
+          DevOps Engineer specialising in <span class="text-white font-semibold">AWS</span>,
+          <span class="text-white font-semibold">Terraform</span>,
+          <span class="text-white font-semibold">Kubernetes</span>, and CI/CD automation across
+          <span class="text-white font-semibold">Hetzner</span> and <span class="text-white font-semibold">DigitalOcean</span>.
+          Certified in AWS, Terraform, and Kubernetes, with strong expertise in scalable cloud infrastructure
+          and containerised deployments.
+        </p>
+        <p class="text-lg text-white/55 leading-relaxed">
+          Focused on automation, reliability, and performance — using tools like
+          <span class="text-white font-semibold">Cloudflare</span> to deliver secure, production-ready systems.
+          I believe infrastructure should be reproducible, observable, and built to scale from day one.
         </p>
 
-        <p class="text-lg text-white/60 leading-relaxed">
-          What drives my work is the pursuit of efficiency and reliability. I specialize in using
-          <span class="text-white font-medium">Infrastructure as Code</span> (primarily Terraform) to provision cloud resources,
-          implementing <span class="text-white font-medium">Kubernetes</span> for orchestration, and designing
-          CI/CD pipelines that enable teams to deploy with confidence.
-        </p>
-
-        <!-- Highlighted quote -->
-        <div class="relative pl-6 py-6 border-l-2 border-[#00e5c8]">
-          <div class="absolute -left-1 top-6 w-2 h-2 rounded-full bg-[#00e5c8] shadow-[0_0_10px_#00e5c8]"></div>
-          <p class="text-xl text-white font-medium leading-relaxed italic">
-            "Committed to continuous learning, staying current with cloud technologies, and sharing knowledge with the community."
+        <div class="relative pl-6 py-5 border-l-2 border-[#22d3ee] rounded-r-lg bg-[#22d3ee]/4">
+          <div class="absolute -left-[5px] top-6 w-2.5 h-2.5 rounded-full bg-[#22d3ee] shadow-[0_0_12px_#22d3ee]"></div>
+          <p class="text-lg text-white font-medium leading-relaxed italic">
+            "Focused on automation, reliability, and performance — delivering secure, production-ready systems."
           </p>
         </div>
 
-        <p class="text-lg text-white/60 leading-relaxed">
-          I believe in the philosophy of continuous improvement—both in infrastructure and in my own growth as an engineer.
-          Whether it's exploring new tools, improving system performance, or mentoring others, I'm always looking for ways
-          to elevate my craft.
-        </p>
-
-        <!-- Skills row -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-          {['Terraform', 'Kubernetes', 'AWS', 'Docker', 'CI/CD', 'GitOps', 'Helm', 'Linux'].map(skill => (
-            <div class="px-4 py-2.5 rounded border border-white/10 bg-white/5 text-center">
-              <span class="font-mono text-sm text-white/70">{skill}</span>
+        <!-- Skills by category -->
+        <div class="space-y-5 pt-2">
+          {Object.entries(skills).map(([category, items]) => (
+            <div class="p-5 rounded-xl border border-white/8 bg-[#0d1117]">
+              <h4 class="text-xs font-semibold tracking-[0.15em] text-[#22d3ee]/70 uppercase mb-4">{category}</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {items.map(skill => (
+                  <div class="flex items-start gap-2.5">
+                    <span class="w-1 h-1 rounded-full bg-[#22d3ee]/50 mt-2 flex-shrink-0"></span>
+                    <div>
+                      <span class="text-sm font-semibold text-white/80">{skill.label}:</span>
+                      <span class="text-sm text-white/40 ml-1.5">{skill.tools}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </section>

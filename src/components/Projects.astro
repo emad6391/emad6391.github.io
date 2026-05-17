@@ -4,7 +4,7 @@ const projects = [
     index: '01',
     title: 'terraform-aws-infrastructure',
     description: 'Production-grade AWS infrastructure built with Terraform — VPC, subnets, security groups, EC2, S3, IAM roles, and CloudWatch monitoring. Modular architecture with remote state in S3 and DynamoDB locking.',
-    techStack: ['Terraform', 'AWS', 'VPC', 'EC2', 'S3', 'IAM'],
+    techStack: ['Terraform', 'AWS', 'VPC', 'EC2', 'IAM'],
     href: 'https://github.com/emadalhani/terraform-aws-infrastructure',
     accent: '#f59e0b',
   },
@@ -19,8 +19,8 @@ const projects = [
   {
     index: '03',
     title: 'k8s-hetzner-argocd',
-    description: 'Kubernetes cluster on Hetzner Cloud using K3s with ArgoCD for GitOps-driven deployments. Automated provisioning with Terraform, Helm chart management, and Prometheus monitoring stack.',
-    techStack: ['Kubernetes', 'Hetzner', 'ArgoCD', 'K3s', 'Terraform', 'Helm'],
+    description: 'Kubernetes cluster on Hetzner Cloud using K8s with ArgoCD for GitOps-driven deployments. Automated provisioning with Terraform, Helm chart management, and Prometheus monitoring stack.',
+    techStack: ['Kubernetes', 'Hetzner', 'ArgoCD', 'K8s', 'Terraform', 'Helm'],
     href: 'https://github.com/emadalhani/k8s-hetzner-argocd',
     accent: '#818cf8',
   },
@@ -40,6 +40,28 @@ const projects = [
     href: 'https://github.com/emadalhani/k8s-eks-argocd',
     accent: '#c084fc',
   },
+
+
+  {
+  index: '06',
+  title: 'multi-cloud-erp-platform',
+  description: 'Production-ready multi-cloud ERP infrastructure for SMB workloads using AWS and Hetzner. Terraform-provisioned with Ansible automation, Dockerized Odoo services, PostgreSQL, Redis, load balancing, monitoring, backups, and CI/CD pipelines.',
+  techStack: [
+    'Terraform',
+    'Ansible',
+    'AWS',
+    'Hetzner',
+    'Docker',
+    'PostgreSQL',
+    'Redis',
+    'Nginx',
+    'Grafana',
+    'Prometheus',
+    'GitHub Actions'
+  ],
+  href: 'https://github.com/emadalhani/multi-cloud-erp-platform',
+  accent: '#34d399',
+},
 ];
 ---
 
